@@ -33,7 +33,7 @@ export default function SignIn() {
                     If you want two way communication similar to websockets you can use long polling library <a target="_blank" className="underline text-blue-400 text-wrap" href="https://github.com/Harshal2703/RealTimeDataBridge">RealTimeDataBridge.</a>
                 </span>
             </div>
-            <GoogleOAuthProvider clientId={process.env.GoogleAuthClientID}>
+            <GoogleOAuthProvider clientId={"462138463214-4l9jq8sfghtvbas7doduamnicdbo1emp.apps.googleusercontent.com"}>
                 <GoogleLogin
                     onSuccess={credentialResponse => {
                         verifyUser(credentialResponse)

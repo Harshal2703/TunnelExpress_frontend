@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server'
 const { OAuth2Client } = require('google-auth-library');
 const { v4: uuidv4, v5: uuidv5 } = require('uuid');
 import { MongoClient } from 'mongodb';
-require('dotenv').config();
 async function verify(token, client) {
     const ticket = await client.verifyIdToken({
         idToken: token["credential"],
-        audience: "462138463214-4l9jq8sfghtvbas7doduamnicdbo1emp.apps.googleusercontent.com"
+        audience: process.env.GoogleAuthClientID
     });
     const payload = ticket.getPayload();
     return payload
